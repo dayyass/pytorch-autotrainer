@@ -27,7 +27,6 @@ class Trainer:
         """
         One training/evaluation cycle (loop).
         Args:
-            model (AutoModelForQuestionAnswering): QA model.
             dataloader (torch.utils.data.DataLoader): dataloader.
             optimizer (torch.optim.Optimizer): optimizer.
             writer (SummaryWriter): tensorboard writer.
