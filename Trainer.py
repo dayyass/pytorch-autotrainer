@@ -61,7 +61,7 @@ class Trainer:
             inputs = inputs.to(device)
             offset_mapping_batch = inputs.pop("offset_mapping")
 
-            if flag == "test":
+            if flag == "test":  # TODO: do we actually need this if?
                 with torch.no_grad():
                     outputs = self.model(**inputs)
                     loss = outputs.loss
@@ -78,10 +78,11 @@ class Trainer:
                 f"batch loss / {flag}", loss.item(), epoch * len(dataloader) + i
             )
 
-            with torch.no_grad():
-                self.model.eval()
-                outputs_inference = self.model(**inputs)
-                self.model.train()
+            if flag == "train":
+                with torch.no_grad():
+                    self.model.eval()
+                    outputs_inference = self.model(**inputs)
+                    self.model.train()
 
             spans_pred_batch_top_1 = get_top_valid_spans(
                 context_list=context_list,
