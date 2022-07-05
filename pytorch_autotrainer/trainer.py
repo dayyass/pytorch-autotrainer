@@ -35,6 +35,8 @@ class Trainer:
         self._experiment_name = experiment_name
 
         self.device = model.device
+
+        # TODO: remove hardcode
         self.writer = SummaryWriter(log_dir=f"runs/{experiment_name}")
 
     # TODO: maybe add valid_dataloader
