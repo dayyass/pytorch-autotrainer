@@ -26,3 +26,6 @@ trainer.train(
 
 ## Requirements
 Python >= 3.7
+
+## Thanks
+Thanks to [Artem](https://github.com/epivoca) for help with code refactoring!
