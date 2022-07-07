@@ -25,7 +25,7 @@ trainer.train(
 ```
 
 ### Compute Metrics
-Trainer has `compute_metrics` parameter from metrics calculation.
+Trainer has `compute_metrics` parameter from metrics calculation.<br>
 `compute_metrics` argument should be a callable (function or class) with the following interface:
 
 ```python3
